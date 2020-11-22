@@ -7,14 +7,14 @@ def read():
     text = text.replace('ţ', 'ț')
     text = text.replace('ş', 'ș')
     text = text.replace('é', '')
-    #string in care memoram caractere neobisnuite
+    #string which memorizes unwanted characters
     str = "0123456789“”йд’µ…‘†à„–·éí✓ç»áó¡→ã±áäéá¾¼é½©°'²''³''ä¹';■öä×¬«§¥÷⋅≥≤−∆↓↑•βúαü"
     for c in str:
         text = text.replace(c,'')
-    #eliminam punctuatia obisnuita
+    #eliminating usual punctuation
     text = text.translate(str.maketrans('', '', string.punctuation))
     text = text.replace('\n', ' ').replace('—','').replace('  ', ' ')
-    #eliminam caractere white space
+    #eliminating white space characters, this piece of code can be compressed further
     text = text.replace('\uf0b7', '')
     text = text.replace('\uf0a7', '')
     text = text.replace('\uf0d8', '')
@@ -33,8 +33,8 @@ def read():
 
 def countInstances(k, text):
 
-    #k reprezinta lungimea secventelor dupa care calculam entropia
-    #d - dictionar in care memoram cuvintele si aparitiile
+    #k is the length of the sequences for which we calculate the entropy
+    #d - dictionary which memorizes the sequences and the number of occurrences
     d = {}
     l = len(text)
     for i in range(0, l - k + 1):
@@ -43,23 +43,22 @@ def countInstances(k, text):
             d[s] += 1
         else:
             d[s] = 1
-    #print("intrati:", d.items(), sep = '\n')
     return d
 
 def computeEntropy(k, text):
 
     dict = countInstances(k, text)
     totalWords = sum(dict.values())
-    H = 0 # entropia
+    H = 0 # entropy
     for s in dict:
-        P = dict[s] / totalWords #calculam probabilitatea unui cuvant
+        P = dict[s] / totalWords #calculating the probability of a word
         H -= P * math.log(P,2)
     return H
 
 text = read()
 listCount = text.split(" ")
 totalLen = len(text) - text.count(" ")
-print("Lungimea medie a unui cuvant: " + str(totalLen / len(listCount)))
+print("Average length of a word: " + str(totalLen / len(listCount)))
 Hprev = 0
 F = 0
 for i in range(1,7):
