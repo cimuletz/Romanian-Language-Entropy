@@ -16,7 +16,7 @@ To get the conditional entropy for n-grams of letters, we use the formula Fn = H
 ```
 
 # Resources
-[Shannon's paper](http://languagelog.ldc.upenn.edu/myl/Shannon1950.pdf)
-[Entropy for n-gram](http://normal-extensions.com/2013/08/04/entropy-for-n-grams/)
+[Shannon's paper](http://languagelog.ldc.upenn.edu/myl/Shannon1950.pdf)  
+[Entropy for n-gram](http://normal-extensions.com/2013/08/04/entropy-for-n-grams/)  
 [Older paper with the entropy of the romanian language](http://dspace.bcu-iasi.ro/static/web/viewer.html?file=http://dspace.bcu-iasi.ro/bitstream/handle/123456789/3388/Novak%2c%20L.%2c%20Experimentul%20de%20predictie%20si%20entropia%20limbii%20romane%2c%20SCL%2c1968%2c%20An%2019%2c%20Nr.3%2c%20p.209-236.pdf?sequence=1&isAllowed=y)
 
